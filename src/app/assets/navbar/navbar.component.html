@@ -6,7 +6,9 @@
         <li><a routerLink="/estaciones/get">Estaciones</a></li>
         <li><a routerLink="/rutas/get">Rutas</a></li>
         <li><a routerLink="/servicios/get">Servicios</a></li>
-        <li><a routerLink="/seguridad/login">Login</a></li>
+         <!-- Sesion -->
+      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
       </ul>
     </div>
   </nav>
