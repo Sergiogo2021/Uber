@@ -8,7 +8,7 @@ import { SeguridadService } from './seguridad.service';
   providedIn: 'root'
 })
 export class UsuarioService {
-  url = "http://localhost:3000"
+  url = "https://apiloopback2021.herokuapp.com/"
 token: string = ''
 
   constructor(private http: HttpClient,
@@ -23,6 +23,7 @@ token: string = ''
       });
     }
     getAll(): Observable<UsuarioModelo[]>{
+      console.log(this.token)
       return this.http.get<UsuarioModelo[]>(`${this.url}/usuarios`, {
         headers: new HttpHeaders({
           "Authorization": `Bearer ${this.token}`

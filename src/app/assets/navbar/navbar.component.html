@@ -2,10 +2,10 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="/admin/get">Administrador</a></li>
-        <li><a routerLink="/estaciones/get">Estaciones</a></li>
-        <li><a routerLink="/rutas/get">Rutas</a></li>
-        <li><a routerLink="/servicios/get">Servicios</a></li>
+        <li *ngIf="activeSession"><a routerLink="/admin/get">Administrador</a></li>
+        <li *ngIf="activeSession"><a routerLink="/estaciones/get">Estaciones</a></li>
+        <li *ngIf="activeSession"><a routerLink="/rutas/get">Rutas</a></li>
+        <li *ngIf="activeSession"><a routerLink="/servicios/get">Servicios</a></li>
          <!-- Sesion -->
       <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
       <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
